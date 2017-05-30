@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-  entry: './breathe.js',
+  entry: './lib/breathe.js',
   output: {
     filename: './bundle.js',
   },
