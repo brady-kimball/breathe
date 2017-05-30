@@ -1,0 +1,18 @@
+#canvasEl {
+  border: 1px dotted #000;
+  max-width: 500px;
+  background-color: #FFF;
+  margin: 10px;
+}
+
+body {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  background-color: #F8F7ED
+}
+
+h1, h2 {
+  margin: 0;
+  text-align: center;
+}
