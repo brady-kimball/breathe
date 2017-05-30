@@ -30,7 +30,7 @@ The variations are described below.
 
 ## Wireframe
 
-![wireframe](assets/Breathe.png)
+![wireframe](../assets/Breathe.png)
 
 The app will consist of a single page.  The grid will be in the center, with nav links on the bottom.  Above the grid will be where the user can set/edit rules for each color.  
 
