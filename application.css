@@ -12,6 +12,14 @@ body {
   background-color: #F8F7ED
 }
 
+.buttons {
+  display: flex;
+}
+
+.buttons button {
+  margin: 0 10px;
+}
+
 h1, h2 {
   margin: 0;
   text-align: center;
