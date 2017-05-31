@@ -34,12 +34,22 @@
       <section class="option-menu">
         <h3>Layouts</h3>
         <section class="options">
-          <label for="num-colors">Number of colors:</label>
-          <input  id="num-colors"
-                  type="number"
-                  value="16"
-                  min="3"
-                  max="16" />
+          <section class="inputs">
+            <label for="num-colors"># of colors:
+            <input  id="num-colors"
+            type="number"
+            value="16"
+            min="3"
+            max="16" />
+            </label>
+            <label for="threshold">Threshold:
+            <input  id="threshold"
+            type="number"
+            value="1"
+            min="1"
+            max="4" />
+            </label>
+          </section>
           <button id="start">Start</button>
           <button id="iterate">Iterate</button>
           <button id="stop">Stop</button>

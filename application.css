@@ -77,3 +77,14 @@ h1, h2, h3 {
   margin: 5px;
   text-align: center;
 }
+
+
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-around;
+}
