@@ -18,20 +18,35 @@
       <button id="stop">Stop</button>
       <button id="clear">Clear</button>
       <button id="random">Random</button>
-      <input id="speed" type="range" min="5" max="15" value="10">
+      <!-- <input id="speed" type="range" min="5" max="15" value="10"> -->
     </section>
     <section class="main">
       <section class="color-menu">
-        <h3>Choose a color</h3>
+        <h3>Paint</h3>
+        <label for="brush-size">Brush size:</label>
+        <input id="brush-size" type="range" min="0" max="5" value="2">
         <section class="colors">
         </section>
-        <input id="brush-size" type="range" min="0" max="5" value="2">
       </section>
       <canvas id="canvasEl" width="500" height="500">
         <p>
           Your browser does not support this content.
         </p>
       </canvas>
+      <section class="option-menu">
+        <h3>Layouts</h3>
+        <section class="options">
+          <label for="num-colors">Number of colors:</label>
+          <input  id="num-colors"
+                  type="number"
+                  value="16"
+                  min="3"
+                  max="16" />
+          <button id="random-colors">Get Random Colors</button>
+          <button id="rainbow">Rainbow</button>
+          <button id="paint">Paint</button>
+        </section>
+      </section>
     </section>
   </body>
 </html>

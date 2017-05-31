@@ -51,6 +51,23 @@ body {
   border-radius: 50%;
 }
 
+.option-menu {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border: 1px solid black;
+}
+
+.option-menu .options {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.options * {
+  margin: 5px;
+}
+
 .main {
   display: flex;
   align-items: center;
