@@ -119,7 +119,7 @@ button {
 }
 
 .colors {
-  width: 110px;
+  width: 120px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -168,8 +168,8 @@ button {
   display: flex;
   flex-direction: column;
 }
-
+/*
 label {
   display: flex;
   flex-direction: column;
-}
+}*/
