@@ -14,6 +14,7 @@ body {
   align-items: center;
   background-color: #F8F7ED;
   overflow: hidden;
+  font-family: 'Oswald', sans-serif;
 }
 
 header {
@@ -25,18 +26,38 @@ header {
   align-content: center;
 }
 
-h1, h2, h3 {
-  margin: 5px;
-  text-align: center;
+header button {
+  margin: 5px 10px;
 }
 
-.buttons {
+h1, h2, h3 {
+  margin: 2px;
+  text-align: center;
+  font-weight: normal;
+  text-shadow: -1px 1px gray;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+h2 {
+  font-weight: 0;
+}
+
+.row-buttons {
   display: flex;
   justify-content: center;
 }
 
-.buttons button {
-  margin: 5px 10px 10px 10px;
+.col-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5px;
+}
+
+button {
+  margin: 5px;
 }
 
 .menu {
@@ -49,9 +70,8 @@ h1, h2, h3 {
 }
 
 .color-menu {
-  margin: 5px;
   left: -200px;
-  top: 100px;
+  top: 125px;
   transition: left .3s;
 }
 
@@ -66,7 +86,6 @@ h1, h2, h3 {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  margin: 5px;
   list-style: none;
 }
 
@@ -84,7 +103,7 @@ h1, h2, h3 {
 
 .option-menu {
   right: -300px;
-  top: 150px;
+  top: 125px;
   transition: right .3s;
 }
 
@@ -93,20 +112,16 @@ h1, h2, h3 {
   transition: right .3s;
 }
 
-
+.inputs {
+  display: flex;
+  justify-content: space-around;
+  margin: 5px;
+}
 
 .option-menu .options {
-  margin: 10px;
+  margin: 5px 10px;
   display: flex;
   flex-direction: column;
-}
-
-.presets button {
-  margin: 0 5px;
-}
-
-.options * {
-  margin: 5px;
 }
 
 .main {
@@ -114,14 +129,7 @@ h1, h2, h3 {
   align-items: center;
 }
 
-
-
 label {
   display: flex;
   flex-direction: column;
-}
-
-.inputs {
-  display: flex;
-  justify-content: space-around;
 }

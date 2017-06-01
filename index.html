@@ -7,6 +7,7 @@
     <script src="https://code.createjs.com/easeljs-0.8.2.min.js"></script>
     <script src="./bundle.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
   </head>
 
   <body>
@@ -18,11 +19,11 @@
     <header class="menu">
       <h1>Breathe</h1>
       <h2>Cyclic Cellular Automata</h2>
-      <section class="buttons">
+      <section class="row-buttons">
         <button id="start">Start</button>
         <button id="iterate">Step</button>
         <button id="stop">Stop</button>
-        <button id="paint-menu">Paint Menu</button>
+        <button id="paint-menu">Paint</button>
         <button id="options">Options</button>
         <!-- <input id="speed" type="range" min="5" max="15" value="10"> -->
       </section>
@@ -36,11 +37,9 @@
         </section>
       </section>
       <section class="option-menu menu">
-        <h3>Layouts</h3>
+        <h3>Options</h3>
         <section class="options">
-          <button id="rainbow">Rainbow</button>
-          <button id="paint">Paint</button>
-          <section class="presets">
+          <section class="row-buttons">
             <button id="pre1">Preset 1</button>
             <button id="pre2">Preset 2</button>
             <button id="pre3">Preset 3</button>
@@ -61,9 +60,11 @@
             max="4" />
             </label>
           </section>
-          <!-- <button id="clear">Clear</button> -->
-          <button id="random">Reset</button>
-          <button id="random-colors">Get New Colors</button>
+          <section class="col-buttons">
+            <button id="random-colors">Get New Colors</button>
+            <button id="reset">Reset</button>
+            <button id="clear">Clear Canvas</button>
+          </section>
         </section>
       </section>
     </section>
