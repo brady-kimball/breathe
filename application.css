@@ -83,6 +83,15 @@ button {
   align-items: center;
   position: absolute;
   background-color:rgba(255,255,255,0.5);
+  opacity: 1;
+}
+
+.dim {
+  opacity: .4;
+}
+
+.menu:hover {
+  opacity: 1;
 }
 
 .color-menu {
@@ -90,6 +99,18 @@ button {
   top: 50%;
   transform: translateY(-50%);
   transition: left .3s;
+}
+
+.toggleHide {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  opacity: .6;
+}
+
+.toggleHide:hover {
+  opacity: 1;
+  cursor: pointer;
 }
 
 .colors-visible {
