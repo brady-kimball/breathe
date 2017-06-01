@@ -1,32 +1,53 @@
 #canvasEl {
   border: 1px dotted #000;
-  max-width: 500px;
+  /*max-width: 500px;*/
   background-color: #FFF;
-  margin: 10px;
 }
 
 body {
   display: flex;
+  position: relative;
   flex-flow: column;
   align-items: center;
   background-color: #F8F7ED
 }
 
+header {
+  position: absolute;
+  display: flex;
+  top: 0px;
+  margin: 0 auto;
+  flex-direction: column;
+  align-content: center;
+}
+
+h1, h2, h3 {
+  margin: 5px;
+  text-align: center;
+}
+
 .buttons {
   display: flex;
+  justify-content: center;
 }
 
 .buttons button {
-  margin: 0 10px;
+  margin: 5px 10px 10px 10px;
 }
 
-.color-menu {
-  background-color: white;
+.menu {
   border: 1px solid black;
-  margin: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: absolute;
+  background-color:rgba(255,255,255,0.5);
+}
+
+.color-menu {
+  margin: 5px;
+  left: 0px;
+  top: 100px;
 }
 
 .colors {
@@ -52,16 +73,20 @@ body {
 }
 
 .option-menu {
-  display: flex;
-  flex-direction: column;
-  background-color: white;
-  border: 1px solid black;
+  right: 0px;
+  top: 150px;
 }
+
+
 
 .option-menu .options {
   margin: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.presets button {
+  margin: 0 5px;
 }
 
 .options * {
@@ -73,10 +98,6 @@ body {
   align-items: center;
 }
 
-h1, h2, h3 {
-  margin: 5px;
-  text-align: center;
-}
 
 
 label {

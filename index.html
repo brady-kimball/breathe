@@ -10,30 +10,37 @@
   </head>
 
   <body>
-    <h1>Breathe</h1>
-    <h2>Cyclic Cellular Automata</h2>
-    <section class="buttons">
-      <button id="rainbow">Rainbow</button>
-      <button id="paint">Paint</button>
+    <canvas id="canvasEl" width="800" height="800">
+      <p>
+        Your browser does not support this content.
+      </p>
+    </canvas>
+    <header class="menu">
+      <h1>Breathe</h1>
+      <h2>Cyclic Cellular Automata</h2>
+      <section class="buttons">
+        <button id="rainbow">Rainbow</button>
+        <button id="paint">Paint</button>
 
-      <!-- <input id="speed" type="range" min="5" max="15" value="10"> -->
-    </section>
+        <!-- <input id="speed" type="range" min="5" max="15" value="10"> -->
+      </section>
+    </header>
     <section class="main">
-      <section class="color-menu">
+      <section class="color-menu menu">
         <h3>Paint</h3>
         <label for="brush-size">Brush size:</label>
         <input id="brush-size" type="range" min="0" max="5" value="2">
         <section class="colors">
         </section>
       </section>
-      <canvas id="canvasEl" width="500" height="500">
-        <p>
-          Your browser does not support this content.
-        </p>
-      </canvas>
-      <section class="option-menu">
+      <section class="option-menu menu">
         <h3>Layouts</h3>
         <section class="options">
+          <section class="presets">
+            <button id="pre1">Preset 1</button>
+            <button id="pre2">Preset 2</button>
+            <button id="pre3">Preset 3</button>
+          </section>
           <section class="inputs">
             <label for="num-colors"># of colors:
             <input  id="num-colors"
