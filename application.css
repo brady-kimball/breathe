@@ -2,6 +2,9 @@
   border: 1px dotted #000;
   /*max-width: 500px;*/
   background-color: #FFF;
+  width: 100%;
+  height: 100%;
+  margin: 0;
 }
 
 body {
@@ -9,7 +12,8 @@ body {
   position: relative;
   flex-flow: column;
   align-items: center;
-  background-color: #F8F7ED
+  background-color: #F8F7ED;
+  overflow: hidden;
 }
 
 header {
