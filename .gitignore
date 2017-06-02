@@ -4,8 +4,5 @@
 
 #Ignore npm modules, webpack results
 node_modules/
-bundle.js
-bundle.js.map
 .DS_Store
 npm-debug.log
-font-awesome-4.7.0
