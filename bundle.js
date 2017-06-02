@@ -716,6 +716,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var dim = document.querySelector(".dim-body");
     splash.remove();
     dim.remove();
+    boardView.run();
     window.removeEventListener("click", handleClick);
   };
   window.addEventListener("click", handleClick);
