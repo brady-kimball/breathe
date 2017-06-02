@@ -33,7 +33,7 @@ body {
 
 .splash {
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 50%;
   width: 575px;
   transform: translateX(-50%)  translateY(-50%);
@@ -42,6 +42,16 @@ body {
 	-moz-box-shadow: 0 0 1em #000;
 	-webkit-box-shadow: 0 0 1em #000;
   z-index: 1002;
+  overflow-y: scroll;
+}
+
+.splash p {
+  margin: 10px;
+}
+
+.splash a {
+  margin: 0;
+  color: blue;
 }
 
 .splash h1 {
@@ -162,6 +172,18 @@ button {
   top: 50%;
   transform: translateY(-50%);
   transition: left .3s;
+}
+
+.help {
+  position: absolute;
+  top: 5px;
+  left: 10px;
+  opacity: .6;
+}
+
+.help:hover {
+  cursor: pointer;
+  opacity: 1;
 }
 
 .toggleHide {
