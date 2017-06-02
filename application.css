@@ -19,14 +19,16 @@ body {
 .num-counter {
   position: absolute;
   top: 5px;
-  left: 20%;
+  left: 50%;
+  transform: translateX(-300px);
   margin: 5px;
 }
 
 .thresh-counter {
   position: absolute;
   top: 5px;
-  right: 21%;
+  right: 50%;
+  transform: translateX(300px);
   margin: 5px;
 }
 
