@@ -5,6 +5,8 @@
   margin: 0;
 }
 
+
+
 body {
   display: flex;
   position: relative;
@@ -14,6 +16,46 @@ body {
   overflow: hidden;
   font-family: 'Oswald', sans-serif;
   margin: 0;
+}
+
+.dim-body{
+  display: block;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 110%;
+	background-color: black;
+	z-index:1001;
+	-moz-opacity: 0.7;
+	opacity:.7;
+}
+
+.splash {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  width: 575px;
+  transform: translateX(-50%)  translateY(-50%);
+  border: 1px solid #111e24;
+	box-shadow: 0 0 1em #000;
+	-moz-box-shadow: 0 0 1em #000;
+	-webkit-box-shadow: 0 0 1em #000;
+  z-index: 1002;
+}
+
+.splash h1 {
+  font-size: 24px;
+  text-transform: none;
+}
+
+.splash h2 {
+  font-size: 22px;
+  margin: 10px;
+}
+
+.splash h3 {
+  font-size: 20px;
 }
 
 .num-counter {
