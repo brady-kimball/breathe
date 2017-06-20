@@ -107,7 +107,7 @@ var randomColor = exports.randomColor = function randomColor() {
 };
 
 var helpText = exports.helpText = function helpText() {
-  var $splash = $("<section class='splash menu'></section>");
+  var $splash = $("<section class='splash menu about'></section>");
   var $cyclicLink = $("<a href=https://en.wikipedia.org/wiki/Cyclic_cellular_automaton>cyclic cellular automata</a>");
   var $mooreLink = $("<a href=https://upload.wikimedia.org/wikipedia/commons/4/4d/Moore_neighborhood_with_cardinal_directions.svg>moore neighborhood. </a>");
   var $s1 = $("<span></span>").text("Breathe is visualization of ");
