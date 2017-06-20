@@ -68,6 +68,15 @@ body {
   font-size: 20px;
 }
 
+.splash .link {
+  margin: 10px;
+}
+
+.link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
 .num-counter {
   position: absolute;
   top: 5px;

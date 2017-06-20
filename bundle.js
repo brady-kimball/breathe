@@ -318,7 +318,7 @@ var BoardView = function () {
     this.hideButtons = document.querySelectorAll(".toggleHide");
     this.eyeButtons = document.querySelectorAll(".toggleHide i");
     this.pausePaintButton = document.getElementById("pause-paint");
-    this.helpButton = document.querySelector(".help");
+    this.helpButton = document.querySelectorAll(".help-button");
     this.bindHandlers();
     this.render();
     this.populateColors();
@@ -349,8 +349,12 @@ var BoardView = function () {
     value: function removeSplash() {
       var splash = document.querySelector(".splash");
       var dim = document.querySelector(".dim-body");
-      splash.remove();
-      dim.remove();
+      if (splash) {
+        splash.remove();
+      }
+      if (dim) {
+        dim.remove();
+      }
       var fn = this.removeSplash.bind(this);
       $("body").off("click");
       $("body").off("click");
@@ -560,10 +564,13 @@ var BoardView = function () {
             }
         }
       });
-      this.helpButton.addEventListener("click", function (e) {
-        e.preventDefault();
-        e.stopImmediatePropagation();
-        that.addHelpSplash();
+      this.helpButton.forEach(function (button) {
+        button.addEventListener("click", function (e) {
+          that.removeSplash();
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          that.addHelpSplash();
+        });
       });
     }
   }, {
