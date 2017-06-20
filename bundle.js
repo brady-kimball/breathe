@@ -385,6 +385,7 @@ var BoardView = function () {
       var that = this;
       this.iterateButton.addEventListener("click", function (e) {
         e.preventDefault();
+        that.stop();
         that.iterate();
       });
       this.startButton.addEventListener("click", function (e) {
