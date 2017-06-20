@@ -180,18 +180,6 @@ button {
   transition: left .3s;
 }
 
-.help {
-  position: absolute;
-  top: 5px;
-  left: 10px;
-  opacity: .6;
-}
-
-.help:hover {
-  cursor: pointer;
-  opacity: 1;
-}
-
 .toggleHide {
   position: absolute;
   top: 5px;
@@ -262,4 +250,23 @@ button {
 
 .about {
   background-color: #CCC;
+}
+
+.help {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  border-radius: 50%;
+  padding: auto;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  font-size: 24px;
+  line-height: 1.2;
+  background-color: #CCC;
+}
+
+.help:hover {
+  cursor: pointer;
+  opacity: .7;
 }
