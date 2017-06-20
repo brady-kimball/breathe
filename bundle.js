@@ -721,8 +721,12 @@ document.addEventListener('DOMContentLoaded', function () {
   var handleClick = function handleClick() {
     var splash = document.querySelector(".splash");
     var dim = document.querySelector(".dim-body");
-    splash.remove();
-    dim.remove();
+    if (splash) {
+      splash.remove();
+    }
+    if (dim) {
+      dim.remove();
+    }
     boardView.run();
     window.removeEventListener("click", handleClick);
   };
