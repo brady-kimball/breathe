@@ -106,6 +106,13 @@ var randomColor = exports.randomColor = function randomColor() {
   return '#' + Math.floor(Math.random() * 16777215).toString(16);
 };
 
+var paintText = exports.paintText = function paintText() {
+  var $splash = $("<section class='splash menu about'></section>");
+  var $p1 = $("<p></p>").text("Paint help!");
+  $splash.append($p1);
+  return $splash;
+};
+
 var helpText = exports.helpText = function helpText() {
   var $splash = $("<section class='splash menu about'></section>");
   var $cyclicLink = $("<a href=https://en.wikipedia.org/wiki/Cyclic_cellular_automaton>cyclic cellular automata</a>");
@@ -326,6 +333,7 @@ var BoardView = function () {
     this.speed = 50;
     this.numColors = 4;
     this.pausePaint = true;
+    this.seenHelpText = false;
   }
 
   _createClass(BoardView, [{
@@ -342,6 +350,17 @@ var BoardView = function () {
       var $dim = $("<section class='dim-body'></section>");
       $("body").append($helpText);
       $("body").append($dim);
+      $("body").on("click", this.removeSplash.bind(this));
+    }
+  }, {
+    key: "addPaintSplash",
+    value: function addPaintSplash() {
+      console.log('happening');
+      var $paintText = Util.paintText();
+      var $dim = $("<section class='dim-body'></section>");
+      $("body").append($paintText);
+      $("body").append($dim);
+      this.seenHelpText = true;
       $("body").on("click", this.removeSplash.bind(this));
     }
   }, {
@@ -499,6 +518,12 @@ var BoardView = function () {
       this.paintMenuButton.addEventListener("click", function (e) {
         var paintMenu = document.querySelector(".color-menu");
         paintMenu.classList.toggle("colors-visible");
+        if (!that.seenHelpText) {
+          that.removeSplash();
+          e.preventDefault();
+          e.stopImmediatePropagation();
+          that.addPaintSplash();
+        }
       });
       this.hideButtons.forEach(function (button) {
         var eyes = _this.eyeButtons;
