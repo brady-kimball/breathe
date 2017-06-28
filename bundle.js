@@ -107,9 +107,13 @@ var randomColor = exports.randomColor = function randomColor() {
 };
 
 var paintText = exports.paintText = function paintText() {
-  var $splash = $("<section class='splash menu about'></section>");
-  var $p1 = $("<p></p>").text("Paint help!");
-  $splash.append($p1);
+  var $splash = $("<section class='splash paint-splash menu about'></section>");
+  var $p2 = $("<p></p>").text("Paint mode allows you to paint on simulations, or clear the canvas and make your own!");
+  var $p3 = $("<p></p>").text("Just pick a color to start painting with and click to paint.  Pressing 'pause on paint' pauses the simulation while you're painting.");
+  var $p4 = $("<p></p>").text("If you clear the canvas and create your own, I highly suggest using three colors, since every color is required to create a repeating pattern.");
+  var $p5 = $("<p></p>").text("To see this message again, click the question mark in the top left corner of the paint box.");
+  $splash.append($("<h1>Paint mode</h1>"));
+  $splash.append($p2, $p3, $p4, $p5);
   return $splash;
 };
 
@@ -326,6 +330,7 @@ var BoardView = function () {
     this.eyeButtons = document.querySelectorAll(".toggleHide i");
     this.pausePaintButton = document.getElementById("pause-paint");
     this.helpButton = document.querySelectorAll(".help-button");
+    this.paintHelp = document.querySelector(".paint-help");
     this.bindHandlers();
     this.render();
     this.populateColors();
@@ -355,7 +360,6 @@ var BoardView = function () {
   }, {
     key: "addPaintSplash",
     value: function addPaintSplash() {
-      console.log('happening');
       var $paintText = Util.paintText();
       var $dim = $("<section class='dim-body'></section>");
       $("body").append($paintText);
@@ -597,6 +601,12 @@ var BoardView = function () {
           e.stopImmediatePropagation();
           that.addHelpSplash();
         });
+      });
+      this.paintHelp.addEventListener("click", function (e) {
+        that.removeSplash();
+        e.preventDefault();
+        e.stopImmediatePropagation();
+        that.addPaintSplash();
       });
     }
   }, {

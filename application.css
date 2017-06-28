@@ -47,6 +47,10 @@ body {
   margin: 10px;
 }
 
+.paint-splash p {
+  text-align: center;
+}
+
 .splash a {
   margin: 0;
   color: blue;
@@ -295,6 +299,17 @@ a.help {
   opacity: .7;
 }
 
+.paint-help {
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  opacity: .6;
+}
+
+.paint-help:hover {
+  opacity: 1;
+  cursor: pointer;
+}
 button {
   background: none;
   box-shadow: 0px 1px 1px #000;
