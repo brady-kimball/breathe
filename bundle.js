@@ -360,12 +360,18 @@ var BoardView = function () {
   }, {
     key: "addPaintSplash",
     value: function addPaintSplash() {
+      var _this = this;
+
       var $paintText = Util.paintText();
       var $dim = $("<section class='dim-body'></section>");
       $("body").append($paintText);
       $("body").append($dim);
       this.seenHelpText = true;
-      $("body").on("click", this.removeSplash.bind(this));
+      this.stop();
+      $("body").on("click", function () {
+        _this.removeSplash.bind(_this)();
+        _this.run();
+      });
     }
   }, {
     key: "removeSplash",
@@ -403,7 +409,7 @@ var BoardView = function () {
   }, {
     key: "bindHandlers",
     value: function bindHandlers() {
-      var _this = this;
+      var _this2 = this;
 
       var that = this;
       this.iterateButton.addEventListener("click", function (e) {
@@ -440,7 +446,7 @@ var BoardView = function () {
       });
       this.canvas.addEventListener("mouseup", function (e) {
         e.preventDefault();
-        _this.painting = false;
+        _this2.painting = false;
         if (that.flagRun) {
           that.run();
           that.flagRun = false;
@@ -448,14 +454,14 @@ var BoardView = function () {
       });
       this.canvas.addEventListener("mousemove", function (e) {
         e.preventDefault();
-        if (_this.painting) {
-          var x = e.pageX - _this.canvas.offsetLeft;
-          var y = e.pageY - _this.canvas.offsetTop;
-          var j = Math.floor(x / _this.dx);
-          var i = Math.floor(y / _this.dx);
-          var id = _this.COLORS.indexOf(_this.currentColor);
-          _this.setNeighborhood(i, j, id, _this.currentColor);
-          _this.render();
+        if (_this2.painting) {
+          var x = e.pageX - _this2.canvas.offsetLeft;
+          var y = e.pageY - _this2.canvas.offsetTop;
+          var j = Math.floor(x / _this2.dx);
+          var i = Math.floor(y / _this2.dx);
+          var id = _this2.COLORS.indexOf(_this2.currentColor);
+          _this2.setNeighborhood(i, j, id, _this2.currentColor);
+          _this2.render();
         }
       });
       this.canvas.addEventListener("mouseout", function (e) {
@@ -480,20 +486,20 @@ var BoardView = function () {
       });
       this.randomColorsButton.addEventListener("click", function (e) {
         e.preventDefault();
-        var newColors = Util.randomSlice(_this.numColors);
+        var newColors = Util.randomSlice(_this2.numColors);
         that.setColors(newColors);
         that.board.setColors(newColors);
-        _this.board.createGrid();
+        _this2.board.createGrid();
         that.render();
       });
       this.thresholdInput.addEventListener("change", function (e) {
         e.preventDefault();
         // that.board.threshold = e.target.value;
-        _this.setThreshold(e.target.value);
+        _this2.setThreshold(e.target.value);
       });
       this.pre1.addEventListener("click", function (e) {
         e.preventDefault();
-        _this.mode = "rainbow";
+        _this2.mode = "rainbow";
         that.setNumColors(16);
         that.board.createGrid();
         that.render();
@@ -501,7 +507,7 @@ var BoardView = function () {
       });
       this.pre2.addEventListener("click", function (e) {
         e.preventDefault();
-        _this.mode = "rainbow";
+        _this2.mode = "rainbow";
         that.setNumColors(4);
         that.board.createGrid();
         that.render();
@@ -509,7 +515,7 @@ var BoardView = function () {
       });
       this.pre3.addEventListener("click", function (e) {
         e.preventDefault();
-        _this.mode = "rainbow";
+        _this2.mode = "rainbow";
         that.setNumColors(3);
         that.board.createGrid();
         that.render();
@@ -530,7 +536,7 @@ var BoardView = function () {
         }
       });
       this.hideButtons.forEach(function (button) {
-        var eyes = _this.eyeButtons;
+        var eyes = _this2.eyeButtons;
         var menus = document.querySelectorAll(".menu");
         button.addEventListener("click", function (e) {
           menus.forEach(function (menu) {
@@ -544,18 +550,18 @@ var BoardView = function () {
       });
       this.pausePaintButton.addEventListener("change", function (e) {
         e.preventDefault();
-        _this.pausePaint = e.target.checked;
+        _this2.pausePaint = e.target.checked;
       });
       window.addEventListener("keydown", function (e) {
         switch (e.keyCode) {
           case 37:
-            if (!(_this.numColors < 4)) {
-              _this.setNumColors(_this.numColors - 1);
+            if (!(_this2.numColors < 4)) {
+              _this2.setNumColors(_this2.numColors - 1);
               that.board.createGrid();
               that.render();
-              if (_this.numColors <= 3) {
+              if (_this2.numColors <= 3) {
                 that.setThreshold(3);
-              } else if (_this.numColors <= 8) {
+              } else if (_this2.numColors <= 8) {
                 that.setThreshold(2);
               } else {
                 that.setThreshold(1);
@@ -563,13 +569,13 @@ var BoardView = function () {
             }
             return;
           case 39:
-            if (!(_this.numColors > 15)) {
-              _this.setNumColors(_this.numColors + 1);
+            if (!(_this2.numColors > 15)) {
+              _this2.setNumColors(_this2.numColors + 1);
               that.board.createGrid();
               that.render();
-              if (_this.numColors <= 3) {
+              if (_this2.numColors <= 3) {
                 that.setThreshold(3);
-              } else if (_this.numColors <= 8) {
+              } else if (_this2.numColors <= 8) {
                 that.setThreshold(2);
               } else {
                 that.setThreshold(1);
@@ -577,20 +583,20 @@ var BoardView = function () {
             }
             return;
           case 38:
-            if (_this.board.threshold < 4) {
-              _this.setThreshold(_this.board.threshold + 1);
+            if (_this2.board.threshold < 4) {
+              _this2.setThreshold(_this2.board.threshold + 1);
             }
             return;
           case 40:
-            if (_this.board.threshold > 1) {
-              _this.setThreshold(_this.board.threshold - 1);
+            if (_this2.board.threshold > 1) {
+              _this2.setThreshold(_this2.board.threshold - 1);
             }
             return;
           case 32:
-            if (_this.running) {
-              _this.stop();
+            if (_this2.running) {
+              _this2.stop();
             } else {
-              _this.run();
+              _this2.run();
             }
         }
       });
